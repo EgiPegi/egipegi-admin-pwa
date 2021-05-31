@@ -5,29 +5,29 @@ export const Navitem = [
     path: "/dashboard",
   },
   {
-    name: "About",
-    icon: "fi-bs-portrait",
-    path: "/about",
+    name: "Table",
+    icon: "fi-bs-grid",
+    path: "/table",
   },
   {
     name: "Setting",
     icon: "fi-bs-settings-sliders",
-    path: "/setting",
+    path: "/settings",
     routes: [
       {
         name: "Setting 1",
         icon: "fi-bs-settings",
-        path: "/setting/satu",
+        path: "/settings/satu",
       },
       {
         name: "Setting 2",
         icon: "fi-bs-bell-ring",
-        path: "/setting/dua",
+        path: "/settings/dua",
       },
       {
         name: "Setting 3",
         icon: "fi-bs-broom",
-        path: "/setting/tiga",
+        path: "/settings/tiga",
       },
     ],
   },

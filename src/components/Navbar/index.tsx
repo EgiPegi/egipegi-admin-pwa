@@ -6,17 +6,16 @@ const Navbar = () => {
   const [NavHide, setNavHide] = useState<boolean>(false);
   const [NavState, setNavState] = useState<string>("");
   useEffect(() => {
-    console.log(NavState);
     const root = document.documentElement;
-    root?.style.setProperty("--nav-width", NavHide ? "70px" : "250px");
+    root?.style.setProperty("--nav-width", NavHide ? "56px" : "250px");
     root?.style.setProperty("--icon-size", NavHide ? "28px" : "18px");
-  }, [NavHide, NavState]);
+  }, [NavHide]);
   return (
     <div className="navbar">
       <div className="nav-head">
         {NavHide ? null : <div className="nav-head-text">EgiPegi Admin</div>}
         <div className="nav-head-logo" onClick={() => setNavHide(!NavHide)}>
-          <i className="fi fi-bs-menu-burger" style={{ fontSize: 35 }}></i>
+          <i className="fi fi-bs-menu-burger" style={{ fontSize: 26 }}></i>
         </div>
       </div>
       <div className="nav-main">
@@ -36,7 +35,6 @@ const Navbar = () => {
                     )}
                   </div>
                 ) : (
-                  // null
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <div
                       className="nav-item"
@@ -50,7 +48,6 @@ const Navbar = () => {
                     <div>
                       {NavState === r.name
                         ? r.routes.map((rc: any) => {
-                            console.log(rc);
                             return (
                               <div key={rc.name}>
                                 <NavLink

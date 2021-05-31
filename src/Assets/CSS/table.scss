@@ -1,0 +1,26 @@
+#custum_table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+#custum_table td,
+#custum_table th {
+  padding: 12px;
+}
+
+#custum_table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#custum_table tr:hover {
+  background-color: #ddd;
+}
+
+#custum_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #353b48;
+  color: white;
+}
