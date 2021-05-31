@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
-import "./App.scss";
 import "./Assets/CSS/style.scss";
+import "./Assets/Icons/css/uicons-bold-straight.css"
 import LoadingSus from "./components/LoadingSus";
 import Routes from "./Config/Routes";
 
