@@ -30,7 +30,7 @@ hr {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background: #44bd32;
+  background: mediumseagreen;
 }
 
 /* Handle on hover */
@@ -133,9 +133,9 @@ hr {
     .nav-item--active {
       font-weight: bold;
       // border-radius: 3px;
-      border-left: 5px solid #44bd32;
-      // border-bottom: 1px solid #44bd32;
-      // border-top: 1px solid #44bd32;
+      border-left: 5px solid mediumseagreen;
+      // border-bottom: 1px solid mediumseagreen;
+      // border-top: 1px solid mediumseagreen;
     }
     .subnav-item {
       display: flex;
@@ -162,9 +162,9 @@ hr {
     .subnav-item--active {
       font-weight: bold;
       // border-radius: 3px;
-      border-left: 5px solid #44bd32;
-      // border-bottom: 1px solid #44bd32;
-      // border-top: 1px solid #44bd32;
+      border-left: 5px solid mediumseagreen;
+      // border-bottom: 1px solid mediumseagreen;
+      // border-top: 1px solid mediumseagreen;
     }
   }
 }
