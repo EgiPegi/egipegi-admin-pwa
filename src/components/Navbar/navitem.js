@@ -10,6 +10,11 @@ export const Navitem = [
     path: "/table",
   },
   {
+    name: "Modal",
+    icon: "fi-bs-copy-alt",
+    path: "/modal",
+  },
+  {
     name: "Setting",
     icon: "fi-bs-settings-sliders",
     path: "/settings",

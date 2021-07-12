@@ -4,6 +4,7 @@ const Settings = lazy(() => import("../../Pages/Settings"));
 const SettingsOne = lazy(() => import("../../Pages/Settings/PageOne"));
 const Page404 = lazy(() => import("../../Pages/Page404"));
 const Tables = lazy(() => import("../../Pages/Tables"));
+const ModalPage = lazy(() => import("../../Pages/ModalPage"));
 const Dashboard = lazy(() => import("../../Pages/Dashboard"));
 
 const routes = [
@@ -14,6 +15,10 @@ const routes = [
   {
     path: "table/", // the url
     component: Tables, // view rendered
+  },
+  {
+    path: "modal/", // the url
+    component: ModalPage, // view rendered
   },
   {
     path: "settings/", // the url
