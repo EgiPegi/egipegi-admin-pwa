@@ -4,7 +4,9 @@ import { Navitem } from "./navitem";
 
 const Navbar = () => {
   const [NavHide, setNavHide] = useState<boolean>(false);
-  const [NavState, setNavState] = useState<string>("");
+  const [NavState, setNavState] = useState<string>(
+    localStorage.getItem("nav-state")!
+  );
   useEffect(() => {
     const root = document.documentElement;
     root?.style.setProperty("--nav-width", NavHide ? "56px" : "250px");
@@ -22,54 +24,66 @@ const Navbar = () => {
         {Navitem.map((r: any) => {
           return (
             <div key={r.name}>
-              <NavLink
-                to={r.path}
-                activeClassName="nav-item--active"
-                className="nav-item"
-              >
-                {!r.routes ? (
-                  <div className="nav-item" onClick={() => setNavState("")}>
+              {!r.routes ? (
+                <NavLink
+                  to={r.path}
+                  activeClassName="nav-item--active"
+                  className="nav-item"
+                >
+                  <div
+                    className="nav-item"
+                    onClick={() => {
+                      localStorage.setItem("nav-state", "");
+                      setNavState("");
+                    }}
+                  >
                     <i className={`fi ${r.icon} nav-icon`}></i>{" "}
                     {NavHide ? null : (
                       <span className="nav-name">{r.name}</span>
                     )}
                   </div>
-                ) : (
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <div
-                      className="nav-item"
-                      onClick={() => setNavState(r.name)}
-                    >
-                      <i className={`fi ${r.icon} nav-icon`}></i>{" "}
-                      {NavHide ? null : (
-                        <span className="nav-name">{r.name}</span>
-                      )}
-                    </div>
-                    <div>
-                      {NavState === r.name
-                        ? r.routes.map((rc: any) => {
-                            return (
-                              <div key={rc.name}>
-                                <NavLink
-                                  to={rc.path}
-                                  activeClassName="subnav-item--active"
-                                  className="subnav-item"
-                                >
-                                  <i className={`fi ${rc.icon} nav-icon`}></i>{" "}
-                                  {NavHide ? null : (
-                                    <span className="subnav-name">
-                                      {rc.name}
-                                    </span>
-                                  )}
-                                </NavLink>
-                              </div>
-                            );
-                          })
-                        : null}
-                    </div>
+                </NavLink>
+              ) : (
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div
+                    className="nav-item"
+                    onClick={() => {
+                      if (NavState === r.name) {
+                        localStorage.setItem("nav-state", "");
+                        setNavState("");
+                      } else {
+                        localStorage.setItem("nav-state", r.name);
+                        setNavState(r.name);
+                      }
+                    }}
+                  >
+                    <i className={`fi ${r.icon} nav-icon`}></i>{" "}
+                    {NavHide ? null : (
+                      <span className="nav-name">{r.name}</span>
+                    )}
                   </div>
-                )}
-              </NavLink>
+                  <div>
+                    {NavState === r.name
+                      ? r.routes.map((rc: any) => {
+                          return (
+                            <div key={rc.name}>
+                              <NavLink
+                                to={rc.path}
+                                activeClassName="subnav-item--active"
+                                className="subnav-item"
+                              >
+                                <i className={`fi ${rc.icon} nav-icon`}></i>{" "}
+                                {NavHide ? null : (
+                                  <span className="subnav-name">{rc.name}</span>
+                                )}
+                              </NavLink>
+                            </div>
+                          );
+                        })
+                      : null}
+                  </div>
+                </div>
+              )}
             </div>
           );
         })}

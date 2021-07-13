@@ -1,5 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import DataTable from "../../components/DataTable";
 
 const rand = () => Math.round(Math.random() * 20 - 10);
 
@@ -31,6 +32,116 @@ const data = {
   ],
 };
 
+//table
+const columns = [
+  {
+    name: "Dataset 1",
+    selector: "data1",
+    // width: "80px",
+  },
+  {
+    name: "Dataset 2",
+    selector: "data2",
+    // action: (row: any) => row.data2,
+  },
+  {
+    name: "Action",
+    selector: "action",
+    width: "50px",
+    action: (row: any) => (
+      <div
+        onClick={() => alert(JSON.stringify(row))}
+        style={{
+          cursor: "pointer",
+          backgroundColor: "mediumseagreen",
+          color: "white",
+          padding: 4,
+          borderRadius: 4,
+        }}
+      >
+        alert
+      </div>
+    ),
+  },
+];
+const tableData = [
+  {
+    data1: "abc",
+    data2: "Lorem ipsum dolor sit amet. 1",
+    data3: "yyy",
+  },
+  {
+    data1: "abcd",
+    data2: "Lorem ipsum dolor sit amet. 2",
+  },
+  {
+    data1: "abcxxx",
+    data2: "Lorem ipsum dolor sit amet. 3",
+  },
+  {
+    data1: "abcr",
+    data2: "Lorem ipsum dolor sit amet. 4",
+  },
+  {
+    data1: "abct",
+    data2: "Lorem ipsum dolor sit amet. 5",
+  },
+  {
+    data1: "abcy",
+    data2: "Lorem ipsum dolor sit amet. 6",
+  },
+  {
+    data1: "abc",
+    data2: "Lorem ipsum dolor sit amet. 7",
+    data3: "yyy",
+  },
+  {
+    data1: "abcd",
+    data2: "Lorem ipsum dolor sit amet. 8",
+  },
+  {
+    data1: "abcxxx",
+    data2: "Lorem ipsum dolor sit amet. 9",
+  },
+  {
+    data1: "abcr",
+    data2: "Lorem ipsum dolor sit amet. 10",
+  },
+  {
+    data1: "abct",
+    data2: "Lorem ipsum dolor sit amet. 11",
+  },
+  {
+    data1: "abcy",
+    data2: "Lorem ipsum dolor sit amet. 12",
+  },
+  {
+    data1: "abc",
+    data2: "Lorem ipsum dolor sit amet. 13",
+    data3: "yyy",
+  },
+  {
+    data1: "abcd",
+    data2: "Lorem ipsum dolor sit amet. 14",
+  },
+  {
+    data1: "abcxxx",
+    data2: "Lorem ipsum dolor sit amet. 15",
+  },
+  {
+    data1: "abcr",
+    data2: "Lorem ipsum dolor sit amet. 16",
+  },
+  {
+    data1: "abct",
+    data2: "Lorem ipsum dolor sit amet. 17",
+  },
+  {
+    data1: "abcy",
+    data2: "Lorem ipsum dolor sit amet. 18",
+  },
+]
+
 const Dashboard = () => {
   return (
     <>
@@ -39,201 +150,13 @@ const Dashboard = () => {
         <hr />
         <div className="title">Dashboard</div>
       </div>
+      
+      
       <div className="wrap">
         <div className="title">Dashboard Bar</div>
         <div className="gr-2-40-60">
           <div>
-            <table id="custum_table">
-              <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Berglunds snabbköp</td>
-                <td>Christina Berglund</td>
-                <td>Sweden</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Königlich Essen</td>
-                <td>Philip Cramer</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
-              </tr>
-              <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-              </tr>
-              <tr>
-                <td>North/South</td>
-                <td>Simon Crowther</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Paris spécialités</td>
-                <td>Marie Bertrand</td>
-                <td>France</td>
-              </tr>
-            </table>
-          </div>
-          <div>
-            <Bar type="bar" data={data} />
-          </div>
-        </div>
-      </div>
-      <div className="wrap">
-        <div className="title">Dashboard Bar</div>
-        <div className="gr-2-40-60">
-          <div>
-            <table id="custum_table">
-              <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Berglunds snabbköp</td>
-                <td>Christina Berglund</td>
-                <td>Sweden</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Königlich Essen</td>
-                <td>Philip Cramer</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
-              </tr>
-              <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-              </tr>
-              <tr>
-                <td>North/South</td>
-                <td>Simon Crowther</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Paris spécialités</td>
-                <td>Marie Bertrand</td>
-                <td>France</td>
-              </tr>
-            </table>
-          </div>
-          <div>
-            <Bar type="bar" data={data} />
-          </div>
-        </div>
-      </div>
-      <div className="wrap">
-        <div className="title">Dashboard Bar</div>
-        <div className="gr-2-40-60">
-          <div>
-            <table id="custum_table">
-              <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Berglunds snabbköp</td>
-                <td>Christina Berglund</td>
-                <td>Sweden</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Königlich Essen</td>
-                <td>Philip Cramer</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
-              </tr>
-              <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-              </tr>
-              <tr>
-                <td>North/South</td>
-                <td>Simon Crowther</td>
-                <td>UK</td>
-              </tr>
-              <tr>
-                <td>Paris spécialités</td>
-                <td>Marie Bertrand</td>
-                <td>France</td>
-              </tr>
-            </table>
+          <DataTable columns={columns} data={tableData} pagination={true} />
           </div>
           <div>
             <Bar type="bar" data={data} />

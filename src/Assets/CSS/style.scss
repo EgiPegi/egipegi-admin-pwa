@@ -69,6 +69,7 @@ hr {
   height: 55px;
   background-color: var(--prim-color);
   position: fixed;
+  text-align: right;
   top: 0;
   right: 0;
 }
@@ -118,6 +119,7 @@ hr {
       color: #ffffff;
       text-decoration: none;
       margin-bottom: 5px;
+      cursor: pointer;
       .nav-icon {
         font-size: var(--icon-size);
         margin: 10px;
@@ -145,6 +147,7 @@ hr {
       color: #ffffff;
       text-decoration: none;
       margin-bottom: 5px;
+      margin-left: 10px;
       font-size: 14px;
       font-weight: normal;
       .nav-icon {
