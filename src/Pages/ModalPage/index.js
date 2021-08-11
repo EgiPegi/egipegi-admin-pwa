@@ -12,7 +12,7 @@ const ModalPage = () => {
       </div>
       <div className="wrap">
         <div className="title">Modal Example</div>
-        <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
+        <button className="btn btn-info" onClick={() => setIsModalOpen(true)}>Open Modal</button>
         <Modal
           isOpen={isModalOpen}
           closeModal={setIsModalOpen}
@@ -31,9 +31,9 @@ const ModalPage = () => {
           vehicula odio pulvinar auctor. Aenean facilisis eleifend massa, a
           dictum sem dapibus id. Phasellus faucibus lacus id enim cursus, non
           sagittis purus mattis.
-          <div>
-          <button onClick={() => setIsModalOpen(false)}>close</button>
-          <button onClick={() => setIsModalOpen(false)}>save</button>
+          <div className="mt-2">  
+          <button className="btn btn-danger mr-1" onClick={() => setIsModalOpen(false)}>close</button>
+          <button className="btn btn-success" onClick={() => setIsModalOpen(false)}>save</button>
           </div>
         </Modal>
       </div>

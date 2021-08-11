@@ -43,6 +43,136 @@ hr {
   height: 10px;
 }
 
+//element
+
+//button
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  min-width: 70px;
+}
+.btn-success {
+  background-color: mediumseagreen;
+  color: white;
+  &:hover {
+    background-color: rgb(45, 141, 88);
+  }
+}
+.btn-info {
+  background-color: dodgerblue;
+  color: white;
+  &:hover {
+    background-color: rgb(25, 114, 202);
+  }
+}
+.btn-danger {
+  background-color: tomato;
+  color: white;
+  &:hover {
+    background-color: rgb(196, 74, 52);
+  }
+}
+.btn-warn {
+  background-color: gold;
+  // color: white;
+  &:hover {
+    background-color: goldenrod;
+  }
+}
+.btn-primary {
+}
+.btn-secondary {
+}
+.btn-login {
+  background-color: mediumseagreen;
+  padding: 15px;
+  color: white;
+  width: 100%;
+  &:hover {
+    background-color: rgb(45, 141, 88);
+  }
+}
+
+.m-1 {
+  margin: 0.5rem;
+}
+.m-2 {
+  margin: 1rem;
+}
+.m-3 {
+  margin: 2.5rem;
+}
+.m-4 {
+  margin: 3rem;
+}
+.m-5 {
+  margin: 3.5rem;
+}
+.mr-1 {
+  margin-right: 0.5rem;
+}
+.mr-2 {
+  margin-right: 1rem;
+}
+.mr-3 {
+  margin-right: 2.5rem;
+}
+.mr-4 {
+  margin-right: 3rem;
+}
+.mr-5 {
+  margin-right: 3.5rem;
+}
+.ml-1 {
+  margin-left: 0.5rem;
+}
+.ml-2 {
+  margin-left: 1rem;
+}
+.ml-3 {
+  margin-left: 2.5rem;
+}
+.ml-4 {
+  margin-left: 3rem;
+}
+.ml-5 {
+  margin-left: 3.5rem;
+}
+.mt-1 {
+  margin-top: 0.5rem;
+}
+.mt-2 {
+  margin-top: 1rem;
+}
+.mt-3 {
+  margin-top: 2.5rem;
+}
+.mt-4 {
+  margin-top: 3rem;
+}
+.mt-5 {
+  margin-top: 3.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
+.mb-3 {
+  margin-bottom: 2.5rem;
+}
+.mb-4 {
+  margin-bottom: 3rem;
+}
+.mb-5 {
+  margin-bottom: 3.5rem;
+}
+
 //main
 .layout {
   width: 100%;
@@ -277,3 +407,5 @@ hr {
     }
   }
 }
+
+

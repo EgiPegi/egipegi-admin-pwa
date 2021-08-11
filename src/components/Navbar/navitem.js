@@ -15,6 +15,16 @@ export const Navitem = [
     path: "/modal",
   },
   {
+    name: "Basic Redux",
+    icon: "fi-bs-physics",
+    path: "/basic-redux",
+  },
+  {
+    name: "Contoh CRUD",
+    icon: "fi-bs-form",
+    path: "/contoh-crud",
+  },
+  {
     name: "Setting",
     icon: "fi-bs-settings-sliders",
     path: "/settings",

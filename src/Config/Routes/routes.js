@@ -1,11 +1,14 @@
 import { lazy } from "react";
 
-const Settings = lazy(() => import("../../Pages/Settings"));
-const SettingsOne = lazy(() => import("../../Pages/Settings/PageOne"));
-const Page404 = lazy(() => import("../../Pages/Page404"));
+const Dashboard = lazy(() => import("../../Pages/Dashboard"));
 const Tables = lazy(() => import("../../Pages/Tables"));
 const ModalPage = lazy(() => import("../../Pages/ModalPage"));
-const Dashboard = lazy(() => import("../../Pages/Dashboard"));
+const Settings = lazy(() => import("../../Pages/Settings"));
+const SettingsOne = lazy(() => import("../../Pages/Settings/PageOne"));
+const ReduxBasic = lazy(() => import("../../Pages/ReduxBasic"));
+const ContohCRUD = lazy(() => import("../../Pages/ContohCRUD"));
+const DoCRUD = lazy(() => import("../../Pages/ContohCRUD/DoCRUD"));
+const Page404 = lazy(() => import("../../Pages/Page404"));
 
 const routes = [
   {
@@ -27,6 +30,18 @@ const routes = [
   {
     path: "settings/satu", // the url
     component: SettingsOne, // view rendered
+  },
+  {
+    path: "basic-redux", // the url
+    component: ReduxBasic, // view rendered
+  },
+  {
+    path: "contoh-crud", // the url
+    component: ContohCRUD, // view rendered
+  },
+  {
+    path: "contoh-crud/do", // the url
+    component: DoCRUD, // view rendered
   },
   {
     path: "404", // the url
