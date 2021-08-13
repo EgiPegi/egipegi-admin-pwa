@@ -31,8 +31,10 @@ const Register = () => {
     dispatch(register(username, email, password))
       .then((data) => {
         history.push("/");
+        setIsLoading(false);
       })
       .catch((err) => {
+        setIsLoading(false);
       });
     // console.log(username, password)
     e.preventDefault();
@@ -121,7 +123,14 @@ const Register = () => {
               >
                 Cancel
               </button>
-              <button className="btn btn-success">Register</button>
+              {isLoading ? (
+                <button className="btn btn-disable">
+                  <div className="btn-loader" />
+                  Register ...
+                </button>
+              ) : (
+                <button className="btn btn-success">Register</button>
+              )}
             </div>
           </form>
         </div>
