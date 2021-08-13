@@ -12,6 +12,7 @@ import {
 const ListCRUD = () => {
   const history = useHistory();
   const [currentContoh, setCurrentContoh] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const contoh = useSelector((state) => state.contoh);
   const dispatch = useDispatch();
@@ -22,14 +23,16 @@ const ListCRUD = () => {
   }
 
   useEffect(() => {
-    dispatch(retrieveContoh());
-    // console.log(contoh);
-    // console.log(contoh)
+    setIsLoading(true);
+    dispatch(retrieveContoh())
+      .then((res) => {
+        setIsLoading(false);
+      })
+      .catch((err) => setIsLoading(false));
   }, [dispatch]);
 
   const refreshData = () => {
     setCurrentContoh(null);
-    // setCurrentIndex(-1);
   };
 
   const removeAllContoh = () => {
@@ -51,7 +54,6 @@ const ListCRUD = () => {
 
   const selectContoh = (contoh) => {
     setCurrentContoh(contoh);
-    // setCurrentIndex(index);
   };
   const deleteOne = () => {
     dispatch(deleteContoh(currentContoh._id))
@@ -74,17 +76,14 @@ const ListCRUD = () => {
     {
       name: "Judul",
       selector: "judul",
-      // action: (row: any) => row.data2,
     },
     {
       name: "Dibuat",
       selector: "createdAt",
-      // action: (row: any) => row.data2,
     },
     {
       name: "Update",
       selector: "updatedAt",
-      // action: (row: any) => row.data2,
     },
     {
       name: "Action",
@@ -112,10 +111,19 @@ const ListCRUD = () => {
       <input
         type="text"
         placeholder="Search by judul"
-        onChange={(e)=>findByTitle(e)}
-        style={{position: "absolute", top: -40, right: 510, padding:10, borderRadius:8}}
+        onChange={(e) => findByTitle(e)}
+        style={{
+          position: "absolute",
+          top: -40,
+          right: 510,
+          padding: 10,
+          borderRadius: 8,
+        }}
       />
-      <DataTable columns={columns} data={contoh} pagination={true} />
+      <div style={{ flex: 1 }}>
+        <DataTable columns={columns} data={contoh} pagination={true} />
+        {isLoading ? <div className="loader-md" /> : null}
+      </div>
       <div className="ml-1">
         {currentContoh ? (
           <div style={{ width: 500 }}>
@@ -158,9 +166,7 @@ const ListCRUD = () => {
             </button>
             <button
               onClick={() => {
-                if (
-                  window.confirm("Hapus Semua Contoh ?")
-                ) {
+                if (window.confirm("Hapus Semua Contoh ?")) {
                   removeAllContoh();
                 }
               }}

@@ -124,7 +124,7 @@ const Register = () => {
                 Cancel
               </button>
               {isLoading ? (
-                <button className="btn btn-disable">
+                <button className="btn btn-disabled">
                   <div className="btn-loader" />
                   Register ...
                 </button>

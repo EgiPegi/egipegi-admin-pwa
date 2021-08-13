@@ -133,6 +133,9 @@ const Login = () => {
                 <button className="btn btn-login">LOGIN</button>
               </div>
             )}
+            <div className="form-footer" style={{ justifyContent:"flex-end" }}>
+              <span onClick={()=> history.push("/create-account")}>or create account here</span>
+            </div>
           </div>
         </form>
       </div>

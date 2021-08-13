@@ -20,18 +20,22 @@ const DoCRUD = () => {
   };
 
   const [currentContoh, setCurrentContoh] = useState(initialContohState);
+  const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
 
   const getContoh = (id) => {
+    setIsLoading(true);
+
     ContohDataService.get(id)
       .then((response) => {
         setCurrentContoh(response.data);
         console.log(response.data);
+        setIsLoading(false);
       })
       .catch((e) => {
-        console.log(e);
+        setIsLoading(false);
       });
   };
 
@@ -53,21 +57,23 @@ const DoCRUD = () => {
   };
 
   const updateContent = () => {
+    setIsLoading(true);
     dispatch(updateContoh(currentContoh._id, currentContoh))
       .then((response) => {
         console.log(response);
 
         setMessage("The Contoh was updated successfully!");
         history.push("/contoh-crud");
-
+        setIsLoading(false);
       })
       .catch((e) => {
-        console.log(e);
+        setIsLoading(false);
       });
   };
 
   const saveContent = () => {
     const { judul, img } = currentContoh;
+    setIsLoading(true);
 
     dispatch(createContoh(judul, img))
       .then((data) => {
@@ -79,9 +85,10 @@ const DoCRUD = () => {
         console.log(data);
         setMessage("The Contoh was create successfully!");
         history.push("/contoh-crud");
+        setIsLoading(false);
       })
       .catch((e) => {
-        console.log(e);
+        setIsLoading(false);
       });
   };
 
@@ -167,8 +174,26 @@ const DoCRUD = () => {
               Cancel
             </button>
             {id ? (
-              <button className="btn btn-success" onClick={updateContent}>
-                Update
+              isLoading ? (
+                <button
+                  className="btn btn-disabled"
+                  disabled
+                  onClick={updateContent}
+                >
+                  <div className="btn-loader" /> Update
+                </button>
+              ) : (
+                <button className="btn btn-success" onClick={updateContent}>
+                  Update
+                </button>
+              )
+            ) : isLoading ? (
+              <button
+                className="btn btn-disabled"
+                disabled
+                onClick={saveContent}
+              >
+                <div className="btn-loader" /> Save
               </button>
             ) : (
               <button className="btn btn-success" onClick={saveContent}>
