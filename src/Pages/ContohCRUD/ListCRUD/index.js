@@ -77,6 +77,16 @@ const ListCRUD = () => {
       // action: (row: any) => row.data2,
     },
     {
+      name: "Dibuat",
+      selector: "createdAt",
+      // action: (row: any) => row.data2,
+    },
+    {
+      name: "Update",
+      selector: "updatedAt",
+      // action: (row: any) => row.data2,
+    },
+    {
       name: "Action",
       selector: "action",
       width: "50px",

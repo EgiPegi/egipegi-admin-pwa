@@ -1,7 +1,7 @@
 import React from "react";
 import { DetectNetwork } from "../../cores";
 
-const Header = () => {
+const Header = ({ lgOt }: any) => {
   const [StatusCon, setStatusCon] = React.useState<any>(
     localStorage.getItem("net-speed")
   );
@@ -21,7 +21,14 @@ const Header = () => {
   }, [isOnline, StatusCon]);
   return (
     <div className="header">
-      <div style={{ color: "white", margin: 15 }}>{StatusCon === "0" ? "Offline" : StatusCon  === "1" ? "Online" : "Slow Connection" }</div>
+      <button onClick={()=>lgOt()}>Logout</button>
+      <div style={{ color: "white", margin: 15 }}>
+        {StatusCon === "0"
+          ? "Offline"
+          : StatusCon === "1"
+          ? "Online"
+          : "Slow Connection"}
+      </div>
     </div>
   );
 };

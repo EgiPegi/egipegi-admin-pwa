@@ -9,7 +9,7 @@ const compressImgB64 = (file) => {
         image.onload = async function () {
           const MAX_WIDTH = 1280;
           const MAX_HEIGHT = 1280;
-          const MAX_SIZE = 90000;
+          const MAX_SIZE = 70000;
           let width = image.width;
           let height = image.height;
   

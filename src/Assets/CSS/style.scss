@@ -62,6 +62,26 @@ hr {
     background-color: rgb(45, 141, 88);
   }
 }
+.btn-disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(189, 189, 189);
+  color: white;
+  cursor: not-allowed;
+  .btn-loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid rgb(224, 224, 224);
+    border-right: 5px solid rgb(121, 121, 121);
+    border-bottom: 5px solid rgb(95, 95, 95);
+    height: 12px;
+    width: 12px;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+    margin-right: 10px;
+  }
+}
 .btn-info {
   background-color: dodgerblue;
   color: white;
@@ -408,4 +428,25 @@ hr {
   }
 }
 
+.loader {
+  margin: 20% auto;
+  border: 20px solid #353b48;
+  border-radius: 50%;
+  border-top: 20px solid #636f80;
+  border-right: 20px solid mediumseagreen;
+  border-bottom: 20px solid tomato;
+  height: 150px;
+  width: 150px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
 
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

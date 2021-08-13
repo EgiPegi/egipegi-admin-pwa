@@ -44,6 +44,10 @@ const routes = [
     component: DoCRUD, // view rendered
   },
   {
+    path: "contoh-crud/do/:id", // the url
+    component: DoCRUD, // view rendered
+  },
+  {
     path: "404", // the url
     component: Page404, // view rendered
   },

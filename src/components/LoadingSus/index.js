@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const LoadingSus = () => {
-    return (
-        <div>
-            Loading ...
-        </div>
-    )
-}
+  return <div className="loader"></div>;
+};
 
-export default LoadingSus
+export default LoadingSus;
