@@ -354,6 +354,18 @@ hr {
     -moz-box-shadow: 2px 3px 6px -1px rgba(0, 0, 0, 0.45);
     width: 95%;
     margin-bottom: 40px;
+    position: relative;
+    .load-content {
+      position: absolute;
+      background-color: #2f36405e;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
     .title {
       font-size: 20px;
       margin-bottom: 10px;

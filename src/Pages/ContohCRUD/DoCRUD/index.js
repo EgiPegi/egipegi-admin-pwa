@@ -103,6 +103,13 @@ const DoCRUD = () => {
 
       {/* Card */}
       <div className="wrap">
+        {isLoading ? (
+          <div className="load-content">
+            <div className="loader-md" />
+            Process ...
+          </div>
+        ) : null}
+
         {/* TITLE  */}
         <div className="title">Contoh {id ? "Edit" : "Add"} Redux CRUD</div>
 
@@ -141,6 +148,7 @@ const DoCRUD = () => {
                     alt="preview"
                     style={{
                       height: 200,
+                      marginLeft: 15,
                       width: "fit-content",
                       backgroundColor: "blue",
                     }}
@@ -154,6 +162,7 @@ const DoCRUD = () => {
                   <div
                     style={{
                       height: 200,
+                      marginLeft: 15,
                       width: 300,
                       backgroundColor: "Highlight",
                     }}

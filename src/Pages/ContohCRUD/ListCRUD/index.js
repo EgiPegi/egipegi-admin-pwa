@@ -47,9 +47,12 @@ const ListCRUD = () => {
   };
 
   const findByTitle = (e) => {
+    setIsLoading(true);
     refreshData();
     const searchTitle = e.target.value;
-    dispatch(findContohByTitle(searchTitle));
+    dispatch(findContohByTitle(searchTitle))
+      .then((r) => setIsLoading(false))
+      .catch((e) => setIsLoading(false));
   };
 
   const selectContoh = (contoh) => {
@@ -121,8 +124,12 @@ const ListCRUD = () => {
         }}
       />
       <div style={{ flex: 1 }}>
-        <DataTable columns={columns} data={contoh} pagination={true} />
-        {isLoading ? <div className="loader-md" /> : null}
+        <DataTable
+          loading={isLoading}
+          columns={columns}
+          data={contoh}
+          pagination={true}
+        />
       </div>
       <div className="ml-1">
         {currentContoh ? (

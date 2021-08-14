@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const DataTable = (props: any) => {
-  const { columns, data, pagination } = props;
+  const { columns, data, pagination, loading } = props;
   const [PerPage, setPerPage] = useState<number>(5);
   const [dataTable, setdataTable] = useState([]);
   const [Page, setPage] = useState<number>(1);
@@ -39,6 +39,11 @@ const DataTable = (props: any) => {
 
   return (
     <div className="table_component">
+      {loading ? (
+        <div className="loading">
+          <div className="loader-md" />
+        </div>
+      ) : null}
       <table id="custum_table">
         <thead>
           <tr>

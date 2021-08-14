@@ -13,7 +13,7 @@ import counterPersistReducer from "./CounterPersist/counterPersist.reducer";
 const rootPersistConfig = {
   key: 'root',
   storage,
-  whitelist: ['counterPersist']//reducer yang diaktifkan persistnya --> persist otomatis masuk ke localStorage
+  whitelist: ['counterPersist', 'auth', 'contoh']//reducer yang diaktifkan persistnya --> persist otomatis masuk ke localStorage
 }
 
 //Reducer di combine
